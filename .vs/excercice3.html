@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+<!-- 
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script> 
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+-->
+    
+    <script src="React-Course/v17/Scripts/scrpit-react.js"></script>
+    <script src="React-Course/v17/Scripts/script-react-dom.js"></script>
+    <script src="React-Course/v17/Scripts/script-babel.js"></script>
+    <script src="React-Course/v17/Scripts/script-dayjs.js"></script>
+
+    
+    <script type="text/babel">
+     
+      function CountToCLick({count, setCount}){
+      
+        function increaseCount(){
+            setCount (count + 1)
+          
+        }
+       
+        return(
+          <>
+            <button
+              onClick = {increaseCount}>
+                Clicked {count} {count == 1 ? 'Time': 'Times'}
+            </button>
+         
+          </>
+        )
+      }
+
+      function App (){
+        
+        const [count,setCount] = React.useState(0)
+        const [inputText, setInputText] = React.useState('')
+        function resetCount(){
+          setCount(0)
+        }
+
+        function saveInputText()
+        {
+          setInputText(event.target.value)
+        }
+        function clearText(){
+          setInputText('')
+        }
+        function exampleText(){
+          
+          setInputText('Patrick')
+
+        }
+        return ( 
+          <>
+          <CountToCLick count={count}
+          setCount= {setCount}/>
+          
+          <CountToCLick count = {count}
+          setCount = {setCount} />
+
+          <button onClick = {resetCount}>Reset</button>
+          <div>
+
+          <input onChange = {saveInputText}
+                 placeholder ='Type a name'
+                 value = {inputText}
+          />
+          <button onClick={clearText}>Reset</button>
+          <button onClick= {exampleText}>Example</button>
+          <p>Hello {inputText}</p>
+          </div>
+          </>
+        );
+      }
+      
+                const container = document.querySelector('.js-container');
+                const root = ReactDOM.createRoot(container); 
+                root.render(<App/>);
+  </script>
+
+  </body>
+</html>

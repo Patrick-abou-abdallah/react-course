@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+<!-- 
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script> 
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+-->
+    
+    <script src="React-Course/v17/Scripts/scrpit-react.js"></script>
+    <script src="React-Course/v17/Scripts/script-react-dom.js"></script>
+    <script src="React-Course/v17/Scripts/script-babel.js"></script>
+    <script src="React-Course/v17/Scripts/script-dayjs.js"></script>
+
+    
+    <script type="text/babel">
+      function Paragraph () {
+        return ( <p>Hello, Welcome to my website </p>)
+      }
+
+      function LogInForm () {
+        return(
+          <>
+          <div>
+            <input 
+              type = "text"
+              placeholder = "Email"
+            />
+          </div>
+          <div>
+            <input 
+              type = "password"
+              placeholder = "Password"
+            />
+          </div>
+          <button>Login</button>
+          <button>Sign up</button>
+          </>
+        );
+      }
+      function ProductDetails({name, price, discountPrice, image}){
+        // return (
+        //   <>
+        //   <p>{name}</p>
+        //   {! discountPrice && <p>Price: $ {price}</p>}
+        //   {discountPrice && <del><p>Price: $ {price}</p></del>}
+        //   {discountPrice && <p>Discount Price: $ {discountPrice}</p>}
+        //   <button>Add To Cart</button>
+        //   </>
+        // )
+        return (
+          <div>
+          <img src={image}/>
+          <p>{name}</p>
+         {discountPrice ? (
+          <>
+          <del><p>Price: $ {price}</p></del>
+          <p>Discount Price: $ {discountPrice}</p>
+          </>
+         ) :
+         (
+          <p>Price: $ {price} </p>
+         )}
+          <button>Add To Cart</button>
+          </div>
+        )
+      } 
+      // function ProductDetailsV2({name, price, discountPrice}){
+      //   return (
+      //     <>
+      //     <p>{name}</p>
+      //    {discountPrice ? (
+      //     <>
+      //     <del><p>Price: $ {price}</p></del>
+      //     <p>Discount Price: $ {discountPrice}</p>
+      //     </>
+      //    ) :
+      //    (
+      //     <p>Price: $ {price} </p>
+      //    )}
+      //     <button>Add To Cart</button>
+      //     </>
+      //   )
+      // } 
+      function App (){
+        return ( 
+          <>
+           
+           
+
+          <ProductDetails 
+            name = "Cotton socks"
+            price = "10.90"
+            discountPrice = "5.45"
+            image= "React-Course/v17/Images/socks.webp"
+            width = "50"
+          />
+         
+          <ProductDetails 
+            name = "Tennis balls"
+            price = "6.00"
+            image= "React-Course/v17/Images/tennisball.webp"
+          />
+
+          <ProductDetails 
+            name = "Plain T-Shirt"
+            price = "7.99"
+            image= "React-Course/v17/Images/shirt.webp"
+          />
+          </>
+
+        );
+      }
+      
+                const container = document.querySelector('.js-container');
+                const root = ReactDOM.createRoot(container); 
+                root.render(<App/>);
+
+       
+
+    </script>
+<!-- 
+    <script type="text/babel">
+        const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+   
+        const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container);
+        root.render(paragraph);
+   
+        setInterval(() => {
+          const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+          root.render(paragraph);
+        }, 1000); -->
+  </script>
+
+  </body>
+</html>

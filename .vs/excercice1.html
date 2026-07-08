@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+<!-- 
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script> 
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+-->
+    
+    <script src="React-Course/v17/Scripts/scrpit-react.js"></script>
+    <script src="React-Course/v17/Scripts/script-react-dom.js"></script>
+    <script src="React-Course/v17/Scripts/script-babel.js"></script>
+    <script src="React-Course/v17/Scripts/script-dayjs.js"></script>
+
+    <script src="react-basics.js"></script>
+
+   
+    <script type="text/babel">
+
+      const button = <button>Hello</button>;
+      const paragraph = <p> current time : {dayjs().format('HH:mm:ss')}</p>;
+      var productCost = 10 + 8*2
+      var shippingCost = 5
+     const div = (
+                    <div> 
+                        <button onClick= {callAlert} >Hello</button> 
+                        <p> paragraph text {2 * 5}</p>
+                        <button>Good Job!!</button>
+                        <p>My name is Slim shady</p>
+                        <hr></hr>
+                        <p>Cotton socks</p>
+                        <p>Price: ${2*5}</p>
+                        <button>Add to Cart</button>
+                        <hr/>
+                        <p> Product cost: $ {productCost}</p>
+                        <hr/>
+                        <p>Product cost : $ {productCost}</p>
+                        <p>shipping cost : $ {shippingCost}</p>
+                        <p>Total cost : $ {productCost + shippingCost}</p>
+                        <button>Place Your Order</button>
+                        <hr/>
+                        <p>Today is {dayjs().format('MMMM D')}</p>
+                        <p>Current time : {dayjs().format('HH:mm:ss')} </p>
+                    </div>
+                    
+
+                 );
+                 
+               
+
+                 console.log(productCost);
+                 function callAlert (){alert('hello all')}
+                 
+                 setInterval(()=> { const paragraph = <p>Current time : {dayjs().format('HH:mm:ss')} </p>
+                root.render(paragraph)
+                }, 1000)
+               
+
+                const container = document.querySelector('.js-container');
+                const root = ReactDOM.createRoot(container); 
+                root.render(paragraph);
+
+       
+
+    </script>
+<!-- 
+    <script type="text/babel">
+        const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+   
+        const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container);
+        root.render(paragraph);
+   
+        setInterval(() => {
+          const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+          root.render(paragraph);
+        }, 1000); -->
+  </script>
+
+  </body>
+</html>
