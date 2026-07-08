@@ -1,5 +1,5 @@
-import { Header } from '../components/Header';
-import './header.css'
+import { Header } from '../components/Header'
+
 export function HomePage (){
     return( 
     <>
