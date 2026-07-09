@@ -1,7 +1,15 @@
 import { Header } from '../components/Header'
 import {products} from '../../starting-code/data/products'
+import axios from 'axios'
 export function HomePage (){
-    return( 
+  
+  axios.get('http://localhost:3000/api/products')
+  .then((response) => {
+   console.log(responsedata)
+  })
+
+
+    return (
     <>
       <title>Ecommerce Project</title>
       <Header />
@@ -12,6 +20,7 @@ export function HomePage (){
              <div key= {product.id} className="product-container">
           <div className="product-image-container">
             <img className="product-image"
+              data-testid="product-image"
               src={product.image} />
           </div>
 
